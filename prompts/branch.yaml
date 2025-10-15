@@ -20,7 +20,7 @@ template: |
      - refactor/{workItemId}-brief-description (for refactoring)
      - docs/{workItemId}-brief-description (for documentation)
      - test/{workItemId}-brief-description (for tests)
-  3. {/workItemId}{workItemId}If no work item ID is provided, {/workItemId}Suggest an appropriate branch name based on:
+  3. {/workItemId}Suggest an appropriate branch name based on:
      - The type of change (feature/fix/refactor/docs/test)
      - A brief, descriptive name using kebab-case
      - Examples: feature/add-user-auth, fix/login-error, refactor/api-client
