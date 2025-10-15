@@ -1,0 +1,25 @@
+# Commit Prompt
+# Helps commit and push code changes with clear commit messages
+
+name: commit
+description: Commit and push code changes with a clear commit message
+
+template: |
+  Please help me commit and push the current code changes.
+
+  Follow these steps:
+  1. Analyze the current git status and code changes
+  2. Write a clear commit message following best practices:
+     - Use imperative mood ("Add feature" not "Added feature")
+     - Be concise but descriptive (50 chars or less for subject)
+     - Explain the "why" not just the "what"
+     - Include relevant context in the body if needed
+  3. Stage the changes
+  4. Commit with the message
+  5. Push to the remote repository
+
+  Commit message format:
+  - Subject line (brief summary)
+  - Blank line
+  - Body (detailed explanation if needed)
+  - Footer (breaking changes, references, etc.)

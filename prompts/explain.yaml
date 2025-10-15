@@ -1,0 +1,20 @@
+# Explain Prompt
+# Provides detailed explanations of how code works
+# Can be tailored to different audience expertise levels
+
+name: explain
+description: Explain how code works
+
+arguments:
+  - name: audience
+    description: Target audience level (e.g., 'beginner', 'intermediate', 'expert')
+    required: false
+
+template: |
+  Please explain how this code works{audience} for a {audience} level developer{/audience}.
+
+  Include:
+  - High-level overview
+  - Step-by-step breakdown
+  - Key concepts and patterns used
+  - Potential gotchas or important details

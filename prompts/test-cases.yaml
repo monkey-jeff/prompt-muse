@@ -1,0 +1,21 @@
+# Test Cases Prompt
+# Generates comprehensive test suites for code
+
+name: test-cases
+description: Generate comprehensive test cases
+
+arguments:
+  - name: framework
+    description: Testing framework to use (e.g., 'Jest', 'Mocha', 'pytest')
+    required: false
+
+template: |
+  Please generate comprehensive test cases{framework} using {framework}{/framework} for this code.
+
+  Include:
+  - Unit tests for core functionality
+  - Edge cases and boundary conditions
+  - Error handling scenarios
+  - Mock/stub suggestions if needed
+
+  Make tests clear, maintainable, and well-documented.

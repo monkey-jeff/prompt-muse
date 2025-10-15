@@ -1,0 +1,22 @@
+# Debug Prompt
+# Helps identify and fix code issues with structured debugging guidance
+
+name: debug
+description: Help debug an issue
+
+# Arguments support template variable substitution
+# Use {argName} in the template to substitute values
+# Use {argName}conditional text{/argName} to include text only when argument is provided
+arguments:
+  - name: error
+    description: The error message or issue description
+    required: false
+
+# Template text sent to the AI
+# Conditional syntax: {error}text{/error} only appears if 'error' argument is provided
+template: |
+  I'm encountering {error}an issue{/error}. Please help me debug this by:
+  - Identifying the root cause
+  - Explaining why it's happening
+  - Providing a fix with explanation
+  - Suggesting how to prevent similar issues

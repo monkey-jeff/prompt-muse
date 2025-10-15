@@ -1,0 +1,34 @@
+# Branch Prompt
+# Helps create a new git branch with proper naming conventions
+
+name: branch
+description: Create a new git branch with proper naming
+
+arguments:
+  - name: workItemId
+    description: Work item or ticket ID (e.g., 'JIRA-123', 'issue-456')
+    required: false
+
+template: |
+  Please help me create a new git branch{workItemId} for work item {workItemId}{/workItemId}.
+
+  Follow these steps:
+  1. Check the current git status and branch
+  2. {workItemId}Create a descriptive branch name incorporating the work item ID {workItemId} following these patterns:
+     - feature/{workItemId}-brief-description (for new features)
+     - fix/{workItemId}-brief-description (for bug fixes)
+     - refactor/{workItemId}-brief-description (for refactoring)
+     - docs/{workItemId}-brief-description (for documentation)
+     - test/{workItemId}-brief-description (for tests)
+  3. {/workItemId}Suggest an appropriate branch name based on:
+     - The type of change (feature/fix/refactor/docs/test)
+     - A brief, descriptive name using kebab-case
+     - Examples: feature/add-user-auth, fix/login-error, refactor/api-client
+  4. Create and switch to the new branch
+
+  Branch naming best practices:
+  - Use lowercase letters
+  - Separate words with hyphens (kebab-case)
+  - Keep it concise but descriptive
+  - Include the change type prefix
+  - {workItemId}Include the work item ID for traceability{/workItemId}
