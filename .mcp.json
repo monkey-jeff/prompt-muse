@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "prompt-muse": {
-      "command": "node",
-      "args": ["/mnt/c/Users/jeffr/src/prompt-muse/index.js"]
-    }
-  }
-}

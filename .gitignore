@@ -36,6 +36,7 @@ build/
 
 # MCP config (may contain sensitive paths)
 mcp_config.json
+.mcp.json
 
 # Optional npm cache directory
 .npm
