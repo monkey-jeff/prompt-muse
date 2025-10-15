@@ -1,0 +1,24 @@
+{
+  "name": "prompt-muse",
+  "version": "1.0.0",
+  "description": "An MCP server providing reusable prompt templates for common coding tasks",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["mcp", "prompts", "templates", "coding", "muse"],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monkey-jeff/prompt-muse.git"
+  },
+  "bugs": {
+    "url": "https://github.com/monkey-jeff/prompt-muse/issues"
+  },
+  "homepage": "https://github.com/monkey-jeff/prompt-muse#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}
