@@ -301,7 +301,13 @@ async function main() {
 }
 
 // Start the server and handle any fatal errors
-main().catch((error) => {
-  console.error("Server error:", error);
-  process.exit(1);
-});
+// Only start the server if this file is being run directly (not imported for testing)
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch((error) => {
+    console.error("Server error:", error);
+    process.exit(1);
+  });
+}
+
+// Export functions for testing
+export { validatePrompt, loadPrompts };

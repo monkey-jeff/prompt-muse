@@ -100,17 +100,54 @@ The server must be configured in the MCP client's config file with the absolute 
 }
 ```
 
+## Testing
+
+The project includes comprehensive unit and integration tests using Jest.
+
+**Running tests:**
+```bash
+npm test                  # Run all tests
+npm run test:watch       # Watch mode for development
+npm run test:coverage    # Generate coverage report
+```
+
+**Test Files:**
+- `tests/prompt-validation.test.js` - Unit tests for prompt validation logic
+- `tests/prompt-loading.test.js` - Integration tests for loading actual prompt files
+- `tests/README.md` - Detailed testing documentation
+
+**What's Tested:**
+- Prompt schema validation (required fields, types, arguments)
+- YAML file loading and parsing
+- Duplicate prompt name detection
+- Template placeholder verification
+- Conditional template syntax validation
+
+**Coverage:**
+- Core functions: `validatePrompt()`, `loadPrompts()`
+- Current test count: 23 tests, 2 test suites
+
+**Continuous Integration:**
+- GitHub Actions workflow runs tests on all PRs and pushes to main
+- Tests run on Node.js 18.x, 20.x, and 22.x
+- Coverage reports generated automatically
+
 ## Important Notes
 
 - This is an ES module project (`"type": "module"` in package.json)
 - The server outputs status and errors to stderr for MCP compatibility
 - Prompts are loaded dynamically at startup - server restart required for prompt changes
 - The `js-yaml` library is used for YAML parsing
-- Currently includes 5 prompts with room to grow to the 15+ mentioned in README
+- Currently includes 7 prompts: debug, test-cases, explain, document, add-feature, branch, commit
 - Prompt validation includes: required field checks, type validation, and duplicate name detection
-- No test suite is currently present in the repository
+- Exported functions (`validatePrompt`, `loadPrompts`) are available for testing
 
 ## Dependencies
 
+**Production:**
 - `@modelcontextprotocol/sdk` - MCP protocol implementation
 - `js-yaml` - YAML file parsing for prompt templates
+
+**Development:**
+- `jest` - Testing framework
+- `@types/jest` - TypeScript definitions for Jest
