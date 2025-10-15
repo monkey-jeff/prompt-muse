@@ -12,20 +12,26 @@ Prompt Muse is an MCP (Model Context Protocol) server that provides reusable pro
 
 - `index.js` - MCP server implementation using `@modelcontextprotocol/sdk`
   - Sets up stdio transport for communication
+  - Dynamically loads prompts from YAML files in `prompts/` directory at startup
   - Implements two MCP request handlers:
     - `ListPromptsRequestSchema` - Returns all available prompts
     - `GetPromptRequestSchema` - Returns a specific prompt with argument substitution
   - Handles template variable replacement using `{variableName}` placeholders
+  - Includes validation to ensure prompt schema compliance
 
-- `prompts.js` - Prompt template definitions
-  - Exports array of prompt objects with: `name`, `description`, `arguments`, `template`
-  - Template syntax uses `{argName}conditional text{/argName}` for optional text based on argument presence
-  - Currently includes 5 prompts (debug, test-cases, explain, document, add-feature) but README mentions 15+
+- `prompts/` directory - Individual YAML files for each prompt template
+  - Each file defines: `name`, `description`, `arguments`, `template`
+  - Template syntax uses `{argName}conditional text{/argName}` for optional text
+  - Inline YAML comments document each prompt
+  - Currently includes 5 prompts: debug, test-cases, explain, document, add-feature
 
 **Key Design Patterns:**
 
+- YAML-based configuration for easy prompt management and community contributions
 - The server uses regex-based template substitution (`\{${key}\}`) to replace argument placeholders
 - Prompts support both required and optional arguments
+- Schema validation ensures all prompts have required fields before loading
+- Duplicate prompt name detection prevents conflicts
 - The server runs as a stdio-based process (no HTTP/network layer)
 
 ## Development Commands
@@ -47,24 +53,33 @@ npm start
 
 ## Adding/Modifying Prompts
 
-To add a new prompt, edit `prompts.js` and add an object to the `prompts` array:
+Prompts are stored as individual YAML files in the `prompts/` directory. To add a new prompt:
 
-```javascript
-{
-  name: "unique-name",           // Used to invoke the prompt
-  description: "What it does",   // Shown to users
-  arguments: [                   // Optional
-    {
-      name: "argName",
-      description: "What this arg does",
-      required: true|false,
-    },
-  ],
-  template: `Prompt text with {argName} substitution`,
-}
+1. Create a new `.yaml` file in `prompts/`
+2. Follow this structure:
+
+```yaml
+# Descriptive comment
+name: unique-name           # Used to invoke the prompt (required)
+description: What it does   # Shown to users (required)
+
+arguments:                  # Optional
+  - name: argName
+    description: What this arg does
+    required: true          # or false
+
+template: |                 # Required
+  Prompt text with {argName} substitution
+  Multiple lines supported
 ```
 
-**Template conditionals:** Use `{argName}text here{/argName}` to include text only when an argument is provided.
+**Template syntax:**
+- `{argName}` - Basic variable substitution
+- `{argName}text here{/argName}` - Conditional text (included only when argument is provided)
+- Use YAML's `|` for multi-line templates
+- Comments with `#` are encouraged for documentation
+
+**Validation:** The server validates all prompts on startup and will skip any invalid files with error messages to stderr.
 
 ## Configuration for MCP Clients
 
@@ -88,6 +103,14 @@ The server must be configured in the MCP client's config file with the absolute 
 ## Important Notes
 
 - This is an ES module project (`"type": "module"` in package.json)
-- The server outputs status to stderr (line 69: `console.error()`)
-- There's a discrepancy: README claims 15+ prompts but `prompts.js` only has 5 defined
+- The server outputs status and errors to stderr for MCP compatibility
+- Prompts are loaded dynamically at startup - server restart required for prompt changes
+- The `js-yaml` library is used for YAML parsing
+- Currently includes 5 prompts with room to grow to the 15+ mentioned in README
+- Prompt validation includes: required field checks, type validation, and duplicate name detection
 - No test suite is currently present in the repository
+
+## Dependencies
+
+- `@modelcontextprotocol/sdk` - MCP protocol implementation
+- `js-yaml` - YAML file parsing for prompt templates

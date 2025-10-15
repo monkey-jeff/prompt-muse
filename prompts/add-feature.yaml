@@ -1,0 +1,21 @@
+# Add Feature Prompt
+# Assists with implementing new features in existing code
+# Provides structured implementation guidance
+
+name: add-feature
+description: Add a new feature to existing code
+
+arguments:
+  - name: feature
+    description: Description of the feature to add
+    required: true  # This argument MUST be provided
+
+template: |
+  Please help me add this feature: {feature}
+
+  Provide:
+  - Implementation approach
+  - Code changes needed
+  - Integration with existing code
+  - Testing recommendations
+  - Any breaking changes or migration notes

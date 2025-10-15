@@ -1,0 +1,18 @@
+# Document Prompt
+# Generates comprehensive documentation for code
+# Automatically uses appropriate format (JSDoc, docstrings, etc.)
+
+name: document
+description: Generate documentation for code
+
+# No arguments needed - works with selected code
+arguments: []
+
+template: |
+  Please generate comprehensive documentation for this code including:
+  - Function/class descriptions
+  - Parameter and return value documentation
+  - Usage examples
+  - Any important notes or warnings
+
+  Use appropriate documentation format (JSDoc, docstrings, etc.).
