@@ -71,7 +71,7 @@ describe('loadPrompts integration tests', () => {
     const promptNames = prompts.map(p => p.name);
 
     // These prompts should exist based on the current codebase
-    const expectedPrompts = ['debug', 'test-cases', 'explain', 'document', 'add-feature'];
+    const expectedPrompts = ['debug', 'explain', 'document', 'add-feature', 'branch', 'commit'];
 
     expectedPrompts.forEach(expectedName => {
       expect(promptNames).toContain(expectedName);
