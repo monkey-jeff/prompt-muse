@@ -55,3 +55,6 @@ docs/.jekyll-cache/
 docs/.jekyll-metadata
 docs/Gemfile.lock
 .sass-cache/
+
+# Claude Code
+.claude

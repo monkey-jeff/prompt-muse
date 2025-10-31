@@ -15,7 +15,7 @@ arguments:
 # Template text sent to the AI
 # Conditional syntax: {error}text{/error} only appears if 'error' argument is provided
 template: |
-  I'm encountering {error}an issue{/error}. Please help me debug this by:
+  I'm encountering an issue{error}: {error}{/error}. Please help me debug this by:
   - Identifying the root cause
   - Explaining why it's happening
   - Providing a fix with explanation
