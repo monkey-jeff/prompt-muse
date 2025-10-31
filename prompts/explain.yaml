@@ -7,11 +7,11 @@ description: Explain how code works
 
 arguments:
   - name: audience
-    description: Target audience level (e.g., 'beginner', 'intermediate', 'expert')
+    description: Target audience level (e.g., 'beginner', 'product', 'executive', etc)
     required: false
 
 template: |
-  Please explain how this code works{audience} for a {audience} level developer{/audience}.
+  Please explain how this code works for a specific audience of {audience}
 
   Include:
   - High-level overview
