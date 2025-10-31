@@ -8,7 +8,7 @@ has_children: true
 # Available Prompts
 {: .no_toc }
 
-Prompt Muse includes 7 built-in prompts for common coding tasks. Each prompt can accept optional arguments to customize behavior.
+Prompt Muse includes 6 built-in prompts for common coding tasks. Each prompt can accept optional arguments to customize behavior.
 {: .fs-6 .fw-300 }
 
 ## Table of Contents
@@ -41,34 +41,12 @@ Use the debug prompt with error: "TypeError: Cannot read property 'name' of unde
 
 ---
 
-## Test Cases
-
-Generate comprehensive test cases for any testing framework.
-
-**Arguments:**
-- `framework` (optional): Testing framework to use (e.g., 'Jest', 'Mocha', 'pytest')
-
-**Example Usage:**
-```
-Use the test-cases prompt with framework: "Jest"
-```
-
-**What it does:**
-- Creates unit tests for core functionality
-- Includes edge cases and boundary conditions
-- Covers error handling scenarios
-- Suggests mocks/stubs if needed
-
-[View source](https://github.com/monkey-jeff/prompt-muse/blob/main/prompts/test-cases.yaml)
-
----
-
 ## Explain
 
-Explain how code works, tailored to your specified audience level.
+Explain how code works, tailored to your specified audience.
 
 **Arguments:**
-- `audience` (optional): Target audience level (e.g., 'beginner', 'intermediate', 'expert')
+- `audience` (optional): Target audience (e.g., 'beginner', 'executive', 'product manager', 'senior developer')
 
 **Example Usage:**
 ```
@@ -184,7 +162,7 @@ You can use multiple prompts in sequence for complex workflows:
 
 1. Use `branch` to create a feature branch
 2. Use `add-feature` to implement the feature
-3. Use `test-cases` to generate tests
+3. Use `document` to add documentation
 4. Use `commit` to commit your changes
 
 ### Customizing Arguments

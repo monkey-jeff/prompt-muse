@@ -23,7 +23,7 @@ Prompt Muse is an MCP (Model Context Protocol) server that provides reusable pro
   - Each file defines: `name`, `description`, `arguments`, `template`
   - Template syntax uses `{argName}conditional text{/argName}` for optional text
   - Inline YAML comments document each prompt
-  - Currently includes 5 prompts: debug, test-cases, explain, document, add-feature
+  - Currently includes 6 prompts: debug, explain, document, add-feature, branch, commit
 
 **Key Design Patterns:**
 
@@ -138,7 +138,7 @@ npm run test:coverage    # Generate coverage report
 - The server outputs status and errors to stderr for MCP compatibility
 - Prompts are loaded dynamically at startup - server restart required for prompt changes
 - The `js-yaml` library is used for YAML parsing
-- Currently includes 7 prompts: debug, test-cases, explain, document, add-feature, branch, commit
+- Currently includes 6 prompts: debug, explain, document, add-feature, branch, commit
 - Prompt validation includes: required field checks, type validation, and duplicate name detection
 - Exported functions (`validatePrompt`, `loadPrompts`) are available for testing
 

@@ -9,10 +9,11 @@ An MCP server providing reusable prompt templates for common coding tasks.
 This MCP server provides ready-to-use prompt templates for common coding tasks:
 
 - **Debug** - Help debugging issues with structured guidance
-- **Test Cases** - Generate comprehensive test cases for any framework
 - **Explain** - Explain how code works, tailored to audience level
 - **Document** - Generate comprehensive code documentation
 - **Add Feature** - Add new features to existing code with implementation guidance
+- **Branch** - Create git branches with proper naming conventions
+- **Commit** - Create git commits following best practices
 
 All prompts are stored as YAML files in the `prompts/` directory for easy customization and extension.
 

@@ -90,7 +90,7 @@ function validatePrompt(prompt, filename) {
  * // Returns:
  * // [
  * //   { name: "debug", description: "Help debug an issue", arguments: [...], template: "..." },
- * //   { name: "test-cases", ... }
+ * //   { name: "explain", ... }
  * // ]
  */
 function loadPrompts() {

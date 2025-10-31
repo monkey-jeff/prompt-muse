@@ -107,7 +107,7 @@ To verify Prompt Muse is working:
 
 1. Open Claude Desktop
 2. Look for the prompts icon or MCP menu
-3. You should see prompts like "debug", "test-cases", "explain", etc.
+3. You should see prompts like "debug", "explain", "document", "branch", "commit", etc.
 4. Try using a prompt (e.g., "explain" on some code)
 
 ## Next Steps

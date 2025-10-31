@@ -34,7 +34,6 @@ Prompt Muse is a **Model Context Protocol (MCP) server** that exposes a collecti
 | Prompt | Description | Arguments |
 |--------|-------------|-----------|
 | **debug** | Help debugging issues with structured guidance | error (optional) |
-| **test-cases** | Generate comprehensive test cases | framework (optional) |
 | **explain** | Explain how code works | audience (optional) |
 | **document** | Generate comprehensive code documentation | - |
 | **add-feature** | Add new features with implementation guidance | feature (required) |
