@@ -2,6 +2,8 @@
 
 An MCP server providing reusable prompt templates for common coding tasks.
 
+📚 **[View Full Documentation](https://monkey-jeff.github.io/prompt-muse/)**
+
 ## Features
 
 This MCP server provides ready-to-use prompt templates for common coding tasks:
@@ -122,6 +124,26 @@ Run the server directly:
 node index.js
 ```
 
+Run tests:
+```bash
+npm test
+```
+
+## Documentation
+
+Full documentation is available at **[https://monkey-jeff.github.io/prompt-muse/](https://monkey-jeff.github.io/prompt-muse/)**
+
+Topics covered:
+- Getting Started Guide
+- Available Prompts Reference
+- Creating Custom Prompts
+- Template Syntax Guide
+- Contributing Guidelines
+
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guide](https://monkey-jeff.github.io/prompt-muse/contributing) for details.
+
 ## License
 
-MIT
+MIT - See [LICENSE](LICENSE) for details

@@ -49,4 +49,12 @@ mcp_config.json
 # yarn.lock
 # pnpm-lock.yaml
 
+# Jekyll
+docs/_site/
+docs/.jekyll-cache/
+docs/.jekyll-metadata
+docs/Gemfile.lock
+.sass-cache/
+
+# Claude Code
 .claude
