@@ -1,0 +1,84 @@
+# Jekyll configuration for Prompt Muse documentation
+
+# Site settings
+title: Prompt Muse
+description: >-
+  An MCP server providing reusable prompt templates for common coding tasks.
+  Enhance your AI-assisted development workflow with pre-built prompts.
+baseurl: "/prompt-muse"
+url: "https://monkey-jeff.github.io"
+
+# Theme
+remote_theme: just-the-docs/just-the-docs
+
+# Color scheme
+color_scheme: light
+
+# Logo
+# logo: "/assets/images/logo.png"
+
+# Search
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+
+# Navigation
+nav_sort: case_insensitive
+
+# Aux links
+aux_links:
+  "GitHub Repository":
+    - "https://github.com/monkey-jeff/prompt-muse"
+  "View on npm":
+    - "#"
+
+aux_links_new_tab: true
+
+# Footer
+footer_content: >-
+  Copyright &copy; 2025 Prompt Muse Contributors.
+  Distributed under the <a href="https://github.com/monkey-jeff/prompt-muse/blob/main/LICENSE">MIT License</a>.
+
+# Back to top
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Heading anchors
+heading_anchors: true
+
+# Collections
+collections:
+  prompts:
+    output: true
+    permalink: /prompts/:name
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: "prompts"
+      type: "prompts"
+    values:
+      layout: default
+      parent: Prompts
+
+# Plugins
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - node_modules/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
