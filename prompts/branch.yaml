@@ -10,7 +10,7 @@ arguments:
     required: false
 
 template: |
-  Please help me create a new git branch for work item {workItemId}.
+  Please help me create a new git branch{workItemId} for work item {workItemId}{/workItemId}.
 
   Follow these steps:
   1. Check the current git status and branch

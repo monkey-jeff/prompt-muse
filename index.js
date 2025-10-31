@@ -248,6 +248,22 @@ server.setRequestHandler(GetPromptRequestSchema, async (request) => {
 
   // Replace argument placeholders with actual values
   let promptText = prompt.template;
+
+  // First, handle conditional blocks {key}...{/key}
+  // If argument is provided, keep the content and substitute {key} with value
+  // If argument is not provided, remove the entire block
+  const conditionalRegex = /\{(\w+)\}([\s\S]*?)\{\/\1\}/g;
+  promptText = promptText.replace(conditionalRegex, (match, key, content) => {
+    if (request.params.arguments && request.params.arguments[key]) {
+      // Argument provided: keep content and substitute placeholders within it
+      return content.replace(new RegExp(`\\{${key}\\}`, 'g'), request.params.arguments[key]);
+    } else {
+      // Argument not provided: remove entire conditional block
+      return '';
+    }
+  });
+
+  // Then, handle simple placeholders {key} outside of conditional blocks
   if (request.params.arguments) {
     for (const [key, value] of Object.entries(request.params.arguments)) {
       promptText = promptText.replace(new RegExp(`\\{${key}\\}`, 'g'), value);
